@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expensify Take-Home Challenge</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div id="loginContent" class="full-scren-form d-none">
+    <form id="loginForm" method="post" data-loading="Loging in...">
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="error d-none"></div>
+        <button type="submit">Login</button>
+    </form>
+</div>
+<div id="transactionTable">
+    <header class="container">
+        <h1>Transactions</h1>
+        <button id="createTransactionButton">Create Transaction</button>
+    </header>
+
+    <main class="container">
+        <section class="transaction-filter">
+            <div class="d-flex justify-content-between align-items-center">
+                <form id="transactionsFilterForm" data-loading="Filtering...">
+                    <div>
+                        <label for="startDate">Start date</label>
+                        <input type="date" name="startDate" pattern="yyyy-mm-dd" id="startDate">
+                    </div>
+                    <div>
+                        <label for="endDate">End date</label>
+                        <input type="date" name="endDate" pattern="yyyy-mm-dd" id="endDate">
+                    </div>
+                    <div>
+                        <button class="filter" type="submit">Apply Filter</button>
+                    </div>
+                </form>
+                <div id="paginateCheckboxContainer" class="d-flex justify-content-between align-items-center">
+                    <input id="paginateCheckbox" type="checkbox" checked>
+                    <label for="paginateCheckbox">Paginate</label>
+                </div>
+            </div>
+        </section>
+        <div class="dashboard-table-wrapper">
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>DATE</th>
+                        <th>MERCHANT</th>
+                        <th>AMOUNT</th>
+                        <th>CURRENCY</th>
+                        <th>BILLABLE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="transactions-pagination-buttons">
+                <button id="loadPreviousTransactionsButton" type="button" class="button" disabled>
+                    Previous
+                </button>
+                <button id="loadNextTransactionsButton" type="button" class="button" disabled>
+                    Next
+                </button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="transactionFormContainer" class="full-scren-form d-none">
+    <form id="transactionForm" method="post" data-loading="Creating transaction...">
+        <h1 class="title">Create Transaction</h1>
+        <div>
+            <label for="merchant">Merchant Name</label>
+            <input type="text" id="merchant" name="merchant" required>
+        </div>
+        <div>
+            <label for="amount">Transaction Amount</label>
+            <input type="number" id="amount" name="amount" required>
+        </div>
+        <div>
+            <label for="date">Transaction Date</label>
+            <input type="date" id="date" pattern="yyyy-mm-dd" name="date" required>
+        </div>
+        <div class="error d-none"></div>
+        <div class="buttons-container">
+            <button type="button" class="text-button">Cancel</button>
+            <button type="submit">Create Transaction</button>
+        </div>
+    </form>
+</div>
+
+<!-- Javascript Files, we've included JQuery here, feel free to use at your discretion. Add whatever else you may need here too. -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

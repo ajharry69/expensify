@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+    server:
+        restart: on-failure
+        container_name: server
+        image: php:8.3.3-apache
+        hostname: server
+        env_file: .env
+        volumes:
+            - ./:/var/www/html
+        ports:
+            - "${PORT:-80}:80"

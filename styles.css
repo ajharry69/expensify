@@ -1,0 +1,212 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: hsl(118, 66%, 40%);
+    --max-width: 960px;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    background-color: color-mix(in oklab, var(--primary) 2.5%, white);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.d-none {
+    display: none;
+}
+
+.container {
+    width: 92%;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+header h1 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.transaction-filter {
+    border-radius: 5px;
+    padding: 1rem 1rem 1.5rem 1rem;
+    margin-top: 1rem;
+    background-color: color-mix(in oklab, var(--primary) 10%, white);
+}
+
+.table-container {
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    background-color: color-mix(in oklab, var(--primary) 10%, white);
+}
+
+.transaction-filter form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+button {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    padding: 10px 25px;
+}
+
+button.text-button {
+    background-color: #fff;
+    color: var(--primary);
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button.filter {
+    text-align: center;
+    min-width: 155px;
+}
+
+button:hover:not(:disabled) {
+    box-shadow: color-mix(in oklab, var(--primary) 50%, white) 0 3px 9px 0;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: color-mix(in oklab, var(--primary), rgba(0, 0, 0, 0.1));
+}
+
+label {
+    display: block;
+    font-size: 0.875rem;
+    width: fit-content;
+    margin-bottom: 0.375rem;
+}
+
+input {
+    border: 1px solid color-mix(in oklab, var(--primary) 30%, white);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+input[type="date"]:hover {
+    cursor: pointer;
+}
+
+input:focus {
+    border: 1px solid color-mix(in oklab, var(--primary) 75%, white);
+    outline: none;
+}
+
+/* Table */
+.dashboard-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0.8125rem, 0.9725rem, 0.9725rem);
+}
+
+.dashboard-table-wrapper th, .dashboard-table-wrapper td {
+    vertical-align: top;
+    text-align: left;
+    padding: 0.7125rem;
+}
+
+.dashboard-table-wrapper th {
+    background-color: color-mix(in oklab, var(--primary) 100%, white);
+    color: white;
+}
+
+.dashboard-table-wrapper tbody tr {
+    border-bottom: 1px solid color-mix(in oklab, var(--primary) 25%, white);
+}
+
+.dashboard-table-wrapper tbody tr:last-child {
+    border-bottom: none;
+}
+
+.dashboard-table-wrapper tbody tr:nth-child(even) {
+    background-color: color-mix(in oklab, var(--primary) 15%, white);
+}
+
+.error {
+    color: orangered;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+#paginateCheckboxContainer {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.transactions-pagination-buttons:not(.d-none) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.full-scren-form:not(.d-none) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 350px;
+
+        @media (max-width: 500px) {
+            width: 90%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+    }
+}
